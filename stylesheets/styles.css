@@ -1,1 +1,62 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300);
+body {
+  font-family: Gentium-Book-Basic, arial, helvetica, sans-serif;
+}
+
+h1 .header {
+  font-size: 2.125rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.side-nav ul, ul.nav {
+  list-style-type: none;
+  font-size: 25px;
+}
+
+.image-sub-text {
+  font-size: 12px;
+  text-align: center;
+}
+
+.image-right {
+  float: right;
+}
+
+.image-long {
+  max-width: 200px;
+}
+
+.image-middle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+}
+
+ul.nav li {
+  display: inline;
+  margin-right: 35px;
+}
+
+.circular-image img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  -webkit-border-radius:  150px;
+  -moz-border-radius:     150px;
+  -ms-border-radius:      150px;
+  -o-border-radius:       150px;
+  border-radius:          150px;
+}
+
+p, .content {
+  font-family: Gentium-Book-Basic;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.side-nav li, .left {
+  text-align: left;
+} 
