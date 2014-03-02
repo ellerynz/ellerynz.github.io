@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I created and AI with RAIN{Indie} and Unity3D
+title: How I created an AI with RAIN{Indie} and Unity3D
 category: Coding
 tags: RAIN{Indie} Unity3D AI
 year: 2013
