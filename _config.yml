@@ -2,3 +2,6 @@ url: http://www.ellerynz.com
 name: Ellery Prisk
 baseurl: /
 markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed

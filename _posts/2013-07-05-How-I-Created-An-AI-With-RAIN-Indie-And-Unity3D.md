@@ -12,13 +12,13 @@ summary: A tutorial on RAIN{Indie}
 [Click here](http://blog.ellerynz.com/2013/10/rainindie-behaviour-tree-custom-action.html) for the follow up post about creating custom actions.
 Earlier this year, I was introduced to Unity through a group project at university. In that project, my group needed some cool AI behaviour. We tried to code it ourselves, but Rain offered much more than we could hack together. I was tasked with implementing Rain and, as a beginner, I found it a bit difficult. So I thought it would be interesting to take other beginners through the process. Here’s how I created an AI and did pathfinding with RAIN{indie}.
 
-##Introducing RAIN{indie}
+## Introducing RAIN{indie}
 
 Rain{indie} is a free and powerful AI tool for Unity3D. Rain provides plenty of features, such as behaviour trees and waypoint collections, that make it easy to get some dynamic behaviour in your games. This tutorial shows the use of the behaviour tree and navgrid. The goal of this tutorial is to get the cylinder to navigate to the sphere, avoiding the wall where necessary.
-##Setup
+## Setup
 
 First we will install Rain, then we will set up a simple scene.
-###Add Rain{indie} to a project
+### Add Rain{indie} to a project
 <figure class="image-middle">
   <img alt="Menu bar with Rain indie" src="/assets/images/2013-07-05/1-menu-bar.png" />
   <figcaption class="image-sub-text">Menu bar with Rain{indie}</figcaption>
@@ -28,7 +28,7 @@ First we will install Rain, then we will set up a simple scene.
 - Download Rain [http://rivaltheory.com/downloadindie/](http://rivaltheory.com/downloadindie/)
 - To add Rain to a new project, from the Unity menu bar, select: Assets -> Import Package -> Custom Package -> find Rain file -> select all and Import
 - If the Rain option doesn’t show, select any of the options from the menu bar, that should force the Rain option to appear.
-###Creating a Simple Scene
+### Creating a Simple Scene
 
 Straightforward stuff, make your scene look like the screenshot and tag the objects for later. If you want to recreate my scene exactly, do the following:
 Create a new project including the terrain assets and character controller packages. Then add Rain as above.
@@ -61,12 +61,12 @@ Tag the objects
 - Create a tag for the Sphere. From the inspector on any object:
 - Tag drop-down -> Add Tag -> Tags drop-down
 - Enter 'AISphere' into the Tags array
-- Go to the inspector for Sphere and add 'AISphere' as the tag 
+- Go to the inspector for Sphere and add 'AISphere' as the tag
 - Tag the Cylinder as 'Player' (it's a tag option by default)
 
 ##Using Rain{indie}
 
-###Creating a Recast Nav Grid
+### Creating a Recast Nav Grid
 
 A navgrid defines a region for the AI to walk in. To add one to your scene:
 
@@ -101,12 +101,12 @@ Make sure there is a filename in the 'Navigation Grid Filename' option. This fil
   <figcaption class="image-sub-text">The Sphere's path manager</figcaption>
 </figure>
 
-###Creating an AI
+### Creating an AI
 
 First, add an AI to the Sphere:
 - Select the Sphere
 - Select the RAIN option from the menubar
-- Select Create AI. 
+- Select Create AI.
 
 This adds the RAINAgent and AIKinematic Controller scripts to the Sphere. It also adds the Mind, Obstacle Avoidance Collider, Path Manager, and Sensor as child objects to the Sphere.
 
@@ -126,7 +126,7 @@ This will let the Path Manager know how to navigate based on the grid generated.
 - Under 'Expanding Box Sensor', change the Max Size to (5,5,5). This isn't necessary, but the sensor was huge and will detect the cylinder from everywhere.
 
 We’ll come back to the AI mind after the next steps.
-###Adding an Aspect
+### Adding an Aspect
 
 An aspect is detected by the AI, so we need one on the Cylinder.
 
@@ -141,7 +141,7 @@ An aspect is detected by the AI, so we need one on the Cylinder.
 Aspects are like a tag that a sensor in Rain uses. Currently, the Sphere has a sensor that can detect visual aspects, and we just added a visual aspect to the Cylinder. There are plenty of other aspects to use, find them all [here](http://support.rivaltheory.com/rainindie/wiki/doku.php?id=sensing:start#aspects).
 
 Next, we need the sensor to know what aspect to look for. This is done with a behaviour tree.
-###Creating a Behaviour Tree
+### Creating a Behaviour Tree
 
 A behaviour tree lets the AI know what to do. To create one, do the following:
 - From the menubar, RAIN -> Behaviour -> Behaviour Tree Editor
@@ -149,7 +149,7 @@ A behaviour tree lets the AI know what to do. To create one, do the following:
 This creates a behaviour tree with a node called 'root'. The root node is a sequencer node that will run its children in sequence until one fails.
 
 For this tutorial, we want the Sphere to detect the Cylinder and then move towards it. To do that, we need to add the detect and move behaviour to the tree.
-####Detect Action
+#### Detect Action
 
 Behaviour trees use action nodes to perform actions. There are built in actions that we can use. Custom actions are possible, though aren't necessary for this example. To add a detect action:
 
@@ -165,7 +165,7 @@ Behaviour trees use action nodes to perform actions. There are built in actions 
 - Add 'CylinderPosition' in the Variable field.
 
 This creates an action that will use a sensor to find an aspect. When the aspect is found by the sensor, the game object with the relevant aspect is stored as a variable. Here, the Sphere’s sensor and the Cylinder's aspect are used. The result is the 'CylinderPosition' variable that can be used later.
-####Move Action
+#### Move Action
 
 Add a move action:
 - Right click on the root, Create -> Action -> Move.
