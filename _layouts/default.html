@@ -24,12 +24,14 @@
   </head>
   <body>
     {% include header.html %}
-    <div class="row">
-      <div class="small-12 large-9 columns">
+    <main class="container">
+      <div class="three columns">
+        {% include side-nav.html %}
+      </div>
+      <div class="nine columns">
         {{ content }}
       </div>
-      {% include side-nav.html %}
-    </div>
+    </main>
 
     {% include footer.html %}
   </body>

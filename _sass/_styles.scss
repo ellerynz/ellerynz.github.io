@@ -1,18 +1,19 @@
 body {
   font-family: Gentium-Book-Basic, arial, helvetica, sans-serif;
-}
-
-h1 .header {
-  font-size: 2.125rem;
+  color: #666;
 }
 
 .center {
   text-align: center;
 }
 
-.side-nav ul, ul.nav {
+ul.nav {
   list-style-type: none;
-  font-size: 25px;
+}
+
+.header {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-weight: 300;
 }
 
 .about-me {
@@ -39,11 +40,6 @@ h1 .header {
   max-width: 400px;
 }
 
-ul.nav li {
-  display: inline;
-  margin-right: 35px;
-}
-
 div.comments {
   margin-top: 20px;
 }
@@ -51,26 +47,6 @@ div.comments {
 .border-bottom {
   border: 1px solid #ccc;
   margin-bottom: 40px;
-}
-
-.semi-circle {
-  height: 50px;
-  width: 100px;
-  border-radius: 100px 100px 0px 0px;
-  -moz-border-radius: 100px 100px 0 0;
-  -webkit-border-radius: 100px 100px 0px 0px;
-  border: solid;
-  position: absolute;
-  top: -55px;
-  left: 75px;
-  border-color: #ccc #ff0000 #fff #fff;
-  border-width: 1px 0px 36px 0px;
-}
-
-@media screen and (max-width:64.063em) {
-  .semi-circle {
-    display:none;
-  }
 }
 
 .circular-image img {
@@ -88,15 +64,9 @@ p, .content {
   font-family: Gentium-Book-Basic;
   font-size: 18px;
   line-height: 140%;
-}
 
-.side-nav li, .left {
-  text-align: left;
-} 
-
-code {
-  font-size: 0.8em;
-  padding: 0.15625em 0.3125em;
-  color: #4e4e4e;
-  background-color: #f5f2f0;
+  h1, h2, h3, h4 {
+    font-family: Gentium-Book-Basic, sans-serif;
+    font-weight: 500;
+  }
 }

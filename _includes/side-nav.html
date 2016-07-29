@@ -1,28 +1,25 @@
-<div class="center">
-  <div class="small-12 large-3 columns">
-    <div class="semi-circle"></div>
+<aside>
+  <aside>
+    <div class="circular-image">
+      <a href="https://plus.google.com/u/0/+ElleryPrisk?rel=author">
+        <img src="https://secure.gravatar.com/avatar/5db8e5748955ba3da5b45879434cd513?s=100" alt="Ellery Prisk profile image" />
+      </a>
+    </div>
     <div>
-      <div class="circular-image">
-        <a href="https://plus.google.com/u/0/+ElleryPrisk?rel=author">
-          <img src="https://secure.gravatar.com/avatar/5db8e5748955ba3da5b45879434cd513?s=100" alt="Ellery Prisk profile image" />
-        </a>
-      </div>
-      <div class="about-me">
-        <p>Hi! I'm Ellery. I'm a Wellington based web developer.</p>
-        <p>I dabble in Rails, Javascript, and Android</p>
-      </div>
+      <p>Hi! I'm Ellery. I'm a Wellington based web developer.</p>
+      <p>I dabble in Rails, Javascript, and Android</p>
     </div>
-    <div class="side-nav">
-      <ul>
-        <h3 class="header">POSTS</h3>
-        {% for post in site.posts %} 
-          <li><a href="{{post.url}}">{{post.title}}</a></li>
-        {% endfor %}
-      </ul>
-      <ul>
-        <h3 class="header">PROJECTS</h3>
-        <li><a href="https://play.google.com/store/apps/details?id=com.ellery.mytabata">My Tabata Timer</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
+  </aside>
+  <nav>
+    <ul class="nav">
+      <h3 class="header">POSTS</h3>
+      {% for post in site.posts limit:5 %}
+        <li><a href="{{post.url}}">{{post.title}}</a></li>
+      {% endfor %}
+    </ul>
+    <ul class="nav">
+      <h3 class="header">PROJECTS</h3>
+      <li><a href="https://play.google.com/store/apps/details?id=com.ellery.mytabata">My Tabata Timer</a></li>
+    </ul>
+  </nav>
+</aside>
