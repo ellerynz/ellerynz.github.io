@@ -11,6 +11,11 @@ ul.nav {
   list-style-type: none;
 }
 
+ul.horizontal > li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
 .header {
   font-family: Lato, Helvetica, Arial, sans-serif;
   font-weight: 300;
